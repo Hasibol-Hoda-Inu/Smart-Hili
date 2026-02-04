@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:smart_hili/features/home/data/service_category_data_model.dart';
 import 'package:smart_hili/features/home/presentation/widgets/carousel_slider.dart';
+import 'package:smart_hili/features/services/Police/presentation/screens/police_details.dart';
 import 'package:smart_hili/features/services/hospital/presentation/screens/all_health_services.dart';
 
 import '../../../../application/app_colors.dart';
@@ -102,7 +103,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       title: item.title,
                       icon: item.icon,
                       color: item.color,
-                      onTap: _onClick,
+                      onTap: ()=> _onNavigate(item.destination),
                     );
                   }
               ),
@@ -113,11 +114,10 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
     );
   }
-  void _onClick(){
-    Navigator.push(
-        context,
-        MaterialPageRoute(builder: (context)=> const AllHealthServices())
-    );
+
+  void _onNavigate(Widget? screen){
+    Navigator.push(context,
+      MaterialPageRoute(builder: (context)=>screen ?? const SizedBox.shrink()),);
   }
 }
 
