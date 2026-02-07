@@ -24,7 +24,7 @@ class ServiceContainer extends StatelessWidget {
       child: Container(
         padding: const EdgeInsets.all(20),
         width: screenWidth/2.3,
-        height: screenHeight/5,
+        height: screenHeight/4.8,
         decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(20),

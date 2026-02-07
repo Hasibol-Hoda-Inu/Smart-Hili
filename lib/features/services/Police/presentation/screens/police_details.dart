@@ -27,7 +27,7 @@ class _PoliceDetailsState extends State<PoliceDetails> {
               const SizedBox(height: 20),
               const StyledTitle(title: "যোগাযোগ নম্বর"),
               const SizedBox(height: 10),
-              const ContactInfo(),
+              const ContactInfo(title: 'police', number: '019487', icon: Icons.security, color: Colors.blueAccent,),
               const SizedBox(height: 20),
               const StyledTitle(title: "বর্ণনা"),
               const SizedBox(height: 10),

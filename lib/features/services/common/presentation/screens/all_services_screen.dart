@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:smart_hili/features/services/education/presentation/screens/all_schools.dart';
+import 'package:smart_hili/features/services/hospital/presentation/screens/diagnostic_centers.dart';
 
 import '../../../../home/presentation/widgets/service_container.dart';
+import '../../../Police/presentation/screens/police_details.dart';
+import '../../../education/presentation/screens/all_college.dart';
+import '../../../hospital/presentation/screens/hospital_details.dart';
 
 class AllServicesScreen extends StatefulWidget {
   const AllServicesScreen({super.key});
@@ -20,17 +25,17 @@ class _AllServicesScreenState extends State<AllServicesScreen> {
         ),
         ),
       ),
-      body: const Padding(
-          padding: EdgeInsets.symmetric(horizontal: 20),
+      body: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20),
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text("১. স্বাস্থ:", style: TextStyle(
+              const Text("১. স্বাস্থ:", style: TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 22,
               ),),
-              SizedBox(height: 12,),
+              const SizedBox(height: 12,),
               Wrap(
                 spacing: 16,
                 runSpacing: 16,
@@ -39,21 +44,23 @@ class _AllServicesScreenState extends State<AllServicesScreen> {
                     title: "হাসপাতাল",
                     icon: Icons.local_hospital,
                     color: Colors.redAccent,
+                    onTap: _onTapH,
                   ),
                   ServiceContainer(
                     title: "ডায়াগনস্টিক সেন্টার",
                     icon: Icons.biotech_rounded,
                     color: Colors.blueGrey,
+                    onTap: _onTapD,
                   ),
-                  ServiceContainer(
+                  const ServiceContainer(
                     title: "ডেন্টাল",
                     icon: Icons.medical_services_rounded,
                     color: Colors.teal,
                   ),
                 ],
               ),
-              SizedBox(height: 24,),
-              Text("২. শিক্ষা", style: TextStyle(
+              const SizedBox(height: 24,),
+              const Text("২. শিক্ষা", style: TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 22,
               ),),
@@ -65,25 +72,27 @@ class _AllServicesScreenState extends State<AllServicesScreen> {
                     title: "স্কুল",
                     icon: Icons.school,
                     color: Colors.blue,
+                    onTap: _onTapSchls,
                   ),
                   ServiceContainer(
                     title: "কলেজ",
                     icon: Icons.account_balance,
                     color: Colors.indigo,
+                    onTap: _onTapClgs,
                   ),
-                  ServiceContainer(
+                  const ServiceContainer(
                     title: "টিউশনি",
                     icon: Icons.menu_book,
                     color: Colors.teal,
                   ),
                 ],
               ),
-              SizedBox(height: 24,),
-              Text("৩. ইলেকট্রিসিটি ও ওয়াইফাই", style: TextStyle(
+              const SizedBox(height: 24,),
+              const Text("৩. ইলেকট্রিসিটি ও ওয়াইফাই", style: TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 22,
               ),),
-              Wrap(
+              const Wrap(
                 spacing: 16,
                 runSpacing: 16,
                 children: [
@@ -99,12 +108,12 @@ class _AllServicesScreenState extends State<AllServicesScreen> {
                   ),
                 ],
               ),
-              SizedBox(height: 24,),
-              Text("৪. টিকিট", style: TextStyle(
+              const SizedBox(height: 24,),
+              const Text("৪. টিকিট", style: TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 22,
               ),),
-              Wrap(
+              const Wrap(
                 spacing: 16,
                 runSpacing: 16,
                 children: [
@@ -120,8 +129,8 @@ class _AllServicesScreenState extends State<AllServicesScreen> {
                   ),
                 ],
               ),
-              SizedBox(height: 24,),
-              Text("৫. নিরাপত্তা", style: TextStyle(
+              const SizedBox(height: 24,),
+              const Text("৫. নিরাপত্তা", style: TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 22,
               ),),
@@ -133,18 +142,35 @@ class _AllServicesScreenState extends State<AllServicesScreen> {
                     title: "পুলিশ",
                     icon: Icons.shield_moon_rounded,
                     color: Colors.teal,
+                    onTap: _onTapP,
                   ),
-                  ServiceContainer(
+                  const ServiceContainer(
                     title: "ফায়ার সার্ভিস",
                     icon: Icons.local_fire_department_rounded,
                     color: Colors.redAccent,
                   ),
                 ],
               ),
+              const SizedBox(height: 20,),
             ],
           ),
         ),
       ),
     );
+  }
+  void _onTapH(){
+    Navigator.push(context, MaterialPageRoute(builder: (context)=>const HospitalDetails()));
+  }
+  void _onTapP(){
+    Navigator.push(context, MaterialPageRoute(builder: (context)=>const PoliceDetails()));
+  }
+  void _onTapD(){
+    Navigator.push(context, MaterialPageRoute(builder: (context)=>const DiagnosticCenters()));
+  }
+  void _onTapSchls(){
+    Navigator.push(context, MaterialPageRoute(builder: (context)=>const AllSchools()));
+  }
+  void _onTapClgs(){
+    Navigator.push(context, MaterialPageRoute(builder: (context)=>const AllCollege()));
   }
 }

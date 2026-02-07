@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:smart_hili/application/app_colors.dart';
-import 'package:smart_hili/features/services/common/presentation/widgets/description_card.dart';
 
+import '../../../../../application/app_colors.dart';
 import '../../../../../application/app_content.dart';
 import '../../../common/presentation/widgets/contact_info.dart';
+import '../../../common/presentation/widgets/description_card.dart';
 import '../../../common/presentation/widgets/service_ds_banner.dart';
 import '../../../common/presentation/widgets/styled_title.dart';
 
-class HospitalDetails extends StatefulWidget {
-  const HospitalDetails({super.key});
+class SebaDC extends StatefulWidget {
+  const SebaDC({super.key});
 
   @override
-  State<HospitalDetails> createState() => _HospitalDetailsState();
+  State<SebaDC> createState() => _SebaDCState();
 }
 
-class _HospitalDetailsState extends State<HospitalDetails> {
+class _SebaDCState extends State<SebaDC> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -90,10 +90,10 @@ class _HospitalDetailsState extends State<HospitalDetails> {
             ),
             const SizedBox(width: 10),
             Text(f['label'] as String,
-                style: const TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.w500,
-                ),
+              style: const TextStyle(
+                fontSize: 16,
+                fontWeight: FontWeight.w500,
+              ),
             ),
           ],
         ),

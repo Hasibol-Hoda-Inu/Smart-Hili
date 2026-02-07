@@ -1,8 +1,17 @@
 import 'package:flutter/material.dart';
 
 class ContactInfo extends StatelessWidget {
+  final String title;
+  final String number;
+  final IconData icon;
+  final Color color;
+
   const ContactInfo({
     super.key,
+    required this.title,
+    required this.number,
+    required this.icon,
+    required this.color,
   });
 
   @override
@@ -16,14 +25,15 @@ class ContactInfo extends StatelessWidget {
       ),
       child: ListTile(
         leading: CircleAvatar(
-          backgroundColor: Colors.red.shade50,
-          child: const Icon(Icons.emergency, color: Colors.red),
+          backgroundColor: color.withAlpha(56),
+          radius: 24,
+          child: Icon(icon, color: color, size: 34,),
         ),
-        title: const Text(
-          "জরুরি বিভাগ / অ্যাম্বুলেন্স",
-          style: TextStyle(fontWeight: FontWeight.bold),
+        title: Text(
+          title,
+          style: const TextStyle(fontWeight: FontWeight.bold),
         ),
-        subtitle: const Text("+880 1819-xxxxxx"),
+        subtitle: Text(number),
         trailing: Container(
           decoration: const BoxDecoration(
             color: Colors.green,

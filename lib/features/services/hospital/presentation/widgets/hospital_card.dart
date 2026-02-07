@@ -5,9 +5,12 @@ import '../../../../../application/app_colors.dart';
 import '../../../../../application/assets_path.dart';
 
 class HospitalCard extends StatelessWidget {
+  final String title;
+
   const HospitalCard({
     super.key,
     this.onTab,
+    required this.title,
   });
 
   final VoidCallback? onTab;
@@ -44,27 +47,29 @@ class HospitalCard extends StatelessWidget {
                     )
                 ),
               ),
-              const Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text("উপজেলা স্বাস্থ্য কমপ্লেক্স",
-                    style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold
-                    ),),
-                  Text("হাকিমপুর দিনাজপুর",
-                    style: TextStyle(fontSize: 16),
-                  ),
-                  SizedBox(height: 10,),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    spacing: 10,
-                    children: [
-                      StatusBadge(),
-                      Text("24/7 Service"),
-                    ],
-                  )
-                ],
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(title,
+                      style: const TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                      ),),
+                    const Text("হাকিমপুর দিনাজপুর",
+                      style: TextStyle(fontSize: 16),
+                    ),
+                    const SizedBox(height: 10,),
+                    const Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      spacing: 10,
+                      children: [
+                        StatusBadge(),
+                        Text("24/7 Service"),
+                      ],
+                    )
+                  ],
+                ),
               ),
             ],
           ),

@@ -29,7 +29,10 @@ class _AllHealthServicesState extends State<AllHealthServices> {
         padding: const EdgeInsets.symmetric(horizontal: 20.0),
         child: Column(
           children: [
-            HospitalCard(onTab: _onTabHDS,),
+            HospitalCard(
+              onTab: _onTabHDS,
+              title: "উপজেলা স্বাস্থ্য কমপ্লেক্স",
+            ),
           ],
         ),
       ),
