@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:smart_hili/application/app_colors.dart';
+import 'package:smart_hili/features/services/common/presentation/widgets/description_card.dart';
 
-import '../../../../../application/app_colors.dart';
 import '../../../../../application/app_content.dart';
 import '../../../common/presentation/widgets/contact_info.dart';
-import '../../../common/presentation/widgets/description_card.dart';
 import '../../../common/presentation/widgets/service_ds_banner.dart';
 import '../../../common/presentation/widgets/styled_title.dart';
 
-class SebaDC extends StatefulWidget {
-  const SebaDC({super.key});
+class HospitalDetails extends StatefulWidget {
+  const HospitalDetails({super.key});
 
   @override
-  State<SebaDC> createState() => _SebaDCState();
+  State<HospitalDetails> createState() => _HospitalDetailsState();
 }
 
-class _SebaDCState extends State<SebaDC> {
+class _HospitalDetailsState extends State<HospitalDetails> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,7 +35,7 @@ class _SebaDCState extends State<SebaDC> {
               const SizedBox(height: 10,),
               const ContactInfo(
                 title: 'অ্যাম্বুলেন্স',
-                number: '01',
+                number: '01756-617390',
                 icon: Icons.emergency,
                 color: Colors.redAccent,
               ),
@@ -60,10 +60,8 @@ class _SebaDCState extends State<SebaDC> {
   Widget _buildFacilityGrid() {
     final facilities = [
       {'icon': Icons.emergency, 'label': 'জরুরি বিভাগ', 'color': Colors.teal},
-      {'icon': Icons.monitor_heart, 'label': 'আইসিইউ (ICU)', 'color': Colors.blue},
       {'icon': Icons.water_drop, 'label': 'ব্লাড ব্যাংক', 'color': Colors.purple},
       {'icon': Icons.medical_services, 'label': 'ফার্মেসি', 'color': Colors.orange},
-      {'icon': Icons.wifi, 'label': 'ফ্রি ওয়াইফাই', 'color': Colors.indigo},
       {'icon': Icons.local_parking, 'label': 'পার্কিং', 'color': Colors.blueGrey},
     ];
 
@@ -86,14 +84,14 @@ class _SebaDCState extends State<SebaDC> {
             CircleAvatar(
               radius: 18,
               backgroundColor: (f['color'] as Color).withAlpha(20),
-              child: Icon(f['icon'] as IconData, color: f['color'] as Color, size: 18),
+              child: Icon(f['icon'] as IconData, color: f['color'] as Color, size: 22),
             ),
             const SizedBox(width: 10),
             Text(f['label'] as String,
-              style: const TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.w500,
-              ),
+                style: const TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.w500,
+                ),
             ),
           ],
         ),

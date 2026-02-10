@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:smart_hili/features/services/education/presentation/screens/all_schools.dart';
-import 'package:smart_hili/features/services/hospital/presentation/screens/diagnostic_centers.dart';
 
 import '../../../../home/presentation/widgets/service_container.dart';
 import '../../../Police/presentation/screens/police_details.dart';
 import '../../../education/presentation/screens/all_college.dart';
-import '../../../hospital/presentation/screens/hospital_details.dart';
+import '../../../health/presentation/screens/all_dental_services.dart';
+import '../../../health/presentation/screens/diagnostic_centers.dart';
+import '../../../health/presentation/screens/hospital_details.dart';
+
 
 class AllServicesScreen extends StatefulWidget {
   const AllServicesScreen({super.key});
@@ -52,10 +54,11 @@ class _AllServicesScreenState extends State<AllServicesScreen> {
                     color: Colors.blueGrey,
                     onTap: _onTapD,
                   ),
-                  const ServiceContainer(
+                  ServiceContainer(
                     title: "ডেন্টাল",
                     icon: Icons.medical_services_rounded,
                     color: Colors.teal,
+                    onTap: _onTapDS,
                   ),
                 ],
               ),
@@ -172,5 +175,8 @@ class _AllServicesScreenState extends State<AllServicesScreen> {
   }
   void _onTapClgs(){
     Navigator.push(context, MaterialPageRoute(builder: (context)=>const AllCollege()));
+  }
+  void _onTapDS(){
+    Navigator.push(context, MaterialPageRoute(builder: (context)=>const AllDentalServices()));
   }
 }

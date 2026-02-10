@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../../../application/app_colors.dart';
-import '../../../hospital/presentation/widgets/hospital_card.dart';
+import '../../../health/presentation/widgets/hospital_card.dart';
 
 class AllCollege extends StatefulWidget {
   const AllCollege({super.key});
@@ -23,8 +23,8 @@ class _AllCollegeState extends State<AllCollege> {
         ),
         centerTitle: true,
       ),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20.0),
+      body: const Padding(
+        padding: EdgeInsets.symmetric(horizontal: 20.0),
         child: SingleChildScrollView(
           child: Column(
             spacing: 20,

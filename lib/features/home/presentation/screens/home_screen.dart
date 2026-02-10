@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:smart_hili/features/home/data/service_category_data_model.dart';
 import 'package:smart_hili/features/home/presentation/widgets/carousel_slider.dart';
-import 'package:smart_hili/features/services/Police/presentation/screens/police_details.dart';
-import 'package:smart_hili/features/services/hospital/presentation/screens/all_health_services.dart';
 
 import '../../../../application/app_colors.dart';
 import '../widgets/service_container.dart';

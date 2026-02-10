@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../../../application/app_colors.dart';
-import '../../../hospital/presentation/widgets/hospital_card.dart';
+import '../../../health/presentation/widgets/hospital_card.dart';
 
 class AllSchools extends StatefulWidget {
   const AllSchools({super.key});

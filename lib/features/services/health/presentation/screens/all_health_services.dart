@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:smart_hili/application/app_colors.dart';
-import 'package:smart_hili/features/services/hospital/presentation/screens/hospital_details.dart';
 
 import '../widgets/hospital_card.dart';
+import 'hospital_details.dart';
 
 class AllHealthServices extends StatefulWidget {
   const AllHealthServices({super.key});

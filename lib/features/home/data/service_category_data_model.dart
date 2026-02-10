@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:smart_hili/features/services/Police/presentation/screens/police_details.dart';
-import 'package:smart_hili/features/services/hospital/presentation/screens/all_health_services.dart';
+
+import '../../services/health/presentation/screens/all_health_services.dart';
 
 class ServiceItem {
   final String title;
