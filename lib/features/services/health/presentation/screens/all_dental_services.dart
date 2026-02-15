@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:smart_hili/features/services/health/presentation/screens/dental_s_details.dart';
 
 import '../../../../../application/app_colors.dart';
 import '../widgets/hospital_card.dart';
@@ -30,9 +31,23 @@ class _AllDentalServicesState extends State<AllDentalServices> {
           children: [
             HospitalCard(
               onTab: (){
-                _onTapDS();
+                _onTapDS(
+                  "Dental Services",
+                  [
+                    "017",
+                    "019",
+                  ],
+                  "নাসির উদ্দিন পাটোয়ারী",
+                  "এক্সপোসিং আব্বাস",
+                  "মার্কেটিং",
+                  "৮+",
+                  "৪.৯",
+                  "১.২k+",
+                  "https://cdn.banglatribune.net/contents/cache/images/640x358x1/uploads/media/2025/11/03/nasiruddin-patwari-7225fab6a449a8414c8dccae19c233a2.jpg?jadewits_media_id=999515",
+                );
               },
               title: "Dental Services",
+
             ),
           ],
         ),
@@ -40,7 +55,21 @@ class _AllDentalServicesState extends State<AllDentalServices> {
     );
   }
 
-  void _onTapDS(){
-
+  void _onTapDS(String title, List<String> contactNmbrs, String name, String specialty, String degree, String experience, String rating, String patients, String imageUrl){
+    Navigator.push(context,
+        MaterialPageRoute(builder: (context)=>
+            DentalSDetails(
+              title: title,
+              contactNmbrs: contactNmbrs,
+              name: name,
+              specialty: specialty,
+              degree: degree,
+              experience: experience,
+              rating: rating,
+              imageUrl: imageUrl,
+              patient: patients,
+            )
+        )
+    );
   }
 }

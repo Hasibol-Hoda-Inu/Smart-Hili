@@ -42,8 +42,8 @@ class _HomeScreenState extends State<HomeScreen> {
           const SizedBox(width: 18,),
         ],
       ),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20.0),
+      body: SingleChildScrollView(
+        padding: const EdgeInsets.symmetric(horizontal: 20),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -87,24 +87,24 @@ class _HomeScreenState extends State<HomeScreen> {
               fontWeight: FontWeight.bold,
             ),),
             const SizedBox(height: 10,),
-            Expanded(
-              child: GridView.builder(
-                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 2,
-                    crossAxisSpacing: 20,
-                    mainAxisSpacing: 20,
-                  ),
-                  itemCount: ServiceCategoryData.serviceItems.length,
-                  itemBuilder: (context, index) {
-                    final item = ServiceCategoryData.serviceItems[index];
-                    return ServiceContainer(
-                      title: item.title,
-                      icon: item.icon,
-                      color: item.color,
-                      onTap: ()=> _onNavigate(item.destination),
-                    );
-                  }
-              ),
+            GridView.builder(
+              shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2,
+                  crossAxisSpacing: 20,
+                  mainAxisSpacing: 20,
+                ),
+                itemCount: ServiceCategoryData.serviceItems.length,
+                itemBuilder: (context, index) {
+                  final item = ServiceCategoryData.serviceItems[index];
+                  return ServiceContainer(
+                    title: item.title,
+                    icon: item.icon,
+                    color: item.color,
+                    onTap: ()=> _onNavigate(item.destination),
+                  );
+                }
             ),
             const SizedBox(height: 10,),
           ],
