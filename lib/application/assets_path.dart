@@ -1,8 +1,9 @@
 class AssetsPath {
   static const String _base = "assets/images";
 
-  static const String banner = "$_base/banner1.jpg";
-  static const String banner2 = "$_base/banner2.webp";
+  static const String banner2 = "$_base/banner.webp";
+
+  static const String mapImg = "$_base/map.png";
 
   static const String gallery1 = "$_base/img1.jpg";
   static const String gallery2 = "$_base/img2.jpg";

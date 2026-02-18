@@ -5,7 +5,6 @@ import 'package:smart_hili/features/services/health/presentation/widgets/treatme
 
 import '../../../../../application/app_colors.dart';
 import '../../../common/presentation/widgets/contact_info.dart';
-import '../../../common/presentation/widgets/description_card.dart';
 import '../../../common/presentation/widgets/styled_title.dart';
 
 class DentalSDetails extends StatefulWidget {

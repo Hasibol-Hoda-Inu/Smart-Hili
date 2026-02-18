@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:smart_hili/features/services/common/presentation/const/location_urls.dart';
 import 'package:smart_hili/features/services/education/presentation/screens/all_schools.dart';
+import 'package:smart_hili/features/services/ticket/presentation/screens/all_bus.dart';
+import 'package:smart_hili/features/services/ticket/presentation/screens/train_details.dart';
 
 import '../../../../home/presentation/widgets/service_container.dart';
 import '../../../Police/presentation/screens/police_details.dart';
@@ -116,7 +119,7 @@ class _AllServicesScreenState extends State<AllServicesScreen> {
                 fontWeight: FontWeight.bold,
                 fontSize: 22,
               ),),
-              const Wrap(
+              Wrap(
                 spacing: 16,
                 runSpacing: 16,
                 children: [
@@ -124,11 +127,13 @@ class _AllServicesScreenState extends State<AllServicesScreen> {
                     title: "বাস",
                     icon: Icons.car_crash_rounded,
                     color: Colors.blueAccent,
+                    onTap: _onTapBus,
                   ),
                   ServiceContainer(
                     title: "ট্রেন",
                     icon: Icons.train_rounded,
                     color: Colors.green,
+                    onTap: _onTapTrain,
                   ),
                 ],
               ),
@@ -165,7 +170,8 @@ class _AllServicesScreenState extends State<AllServicesScreen> {
     Navigator.push(context, MaterialPageRoute(builder: (context)=>const HospitalDetails()));
   }
   void _onTapP(){
-    Navigator.push(context, MaterialPageRoute(builder: (context)=>const PoliceDetails()));
+    Navigator.push(context, MaterialPageRoute(builder: (context)=>
+    const PoliceDetails(locationUrl: LocationUrls.policeStation,)));
   }
   void _onTapD(){
     Navigator.push(context, MaterialPageRoute(builder: (context)=>const DiagnosticCenters()));
@@ -178,5 +184,12 @@ class _AllServicesScreenState extends State<AllServicesScreen> {
   }
   void _onTapDS(){
     Navigator.push(context, MaterialPageRoute(builder: (context)=>const AllDentalServices()));
+  }
+  void _onTapBus(){
+    Navigator.push(context, MaterialPageRoute(builder: (context)=>const AllBus()));
+  }
+  void _onTapTrain(){
+    Navigator.push(context, MaterialPageRoute(builder: (context)=>
+    const TrainDetails(locationUrl: LocationUrls.trainStation,)));
   }
 }

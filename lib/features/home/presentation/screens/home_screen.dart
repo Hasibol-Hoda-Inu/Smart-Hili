@@ -41,6 +41,7 @@ class _HomeScreenState extends State<HomeScreen> {
               )),
           const SizedBox(width: 18,),
         ],
+        backgroundColor: AppColors.wbgColor,
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.symmetric(horizontal: 20),
