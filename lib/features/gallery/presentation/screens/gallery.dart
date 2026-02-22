@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
 import '../../../../application/app_colors.dart';
+import 'image_pop_widget.dart';
 
 class Gallery extends StatefulWidget {
   const Gallery({super.key});
@@ -15,7 +16,10 @@ class _GalleryState extends State<Gallery> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.wbgColor,
-      appBar: AppBar(title: const Text("শহরের গ্যালারি"), centerTitle: true),
+      appBar: AppBar(
+          title: const Text("শহরের গ্যালারি"),
+        centerTitle: true,
+        backgroundColor: AppColors.wbgColor,),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20.0),
         child: Column(
@@ -36,10 +40,27 @@ class _GalleryState extends State<Gallery> {
                     const SliverSimpleGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 2,
                     ),
-                itemBuilder: (context, index) => ClipRRect(
-                  borderRadius: BorderRadius.circular(6),
-                  child: Image.asset('assets/images/img${index + 1}.jpg'),
-                ),
+                itemBuilder: (context, index){
+                  String imagePath = 'assets/images/img${index + 1}.jpg';
+                  return GestureDetector(
+                  onTap: ()=> Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context){
+                        return DetailScreen(
+                          imagePath: imagePath,
+                          tag: 'img${index + 1}',
+                        );
+                      })
+                  ),
+                  child: Hero(
+                    tag: 'img${index + 1}',
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(6),
+                      child: Image.asset(imagePath),
+                    ),
+                  ),
+                );
+                }
               ),
             ),
           ],

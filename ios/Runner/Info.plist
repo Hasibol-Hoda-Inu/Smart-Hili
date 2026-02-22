@@ -6,6 +6,9 @@
     <array>
         <string>https</string>
         <string>tel</string>
+        <string>iosmap</string>
+        <string>baidumaps</string>
+        <string>comgooglemaps</string>
     </array>
 
 	<key>CFBundleDevelopmentRegion</key>

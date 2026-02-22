@@ -32,7 +32,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
     return Scaffold(
       backgroundColor: AppColors.wbgColor,
       appBar: AppBar(
-        title: const Text("স্কুল বিস্তারিত"),
+        title: const Text("প্রতিষ্ঠান বিস্তারিত"),
         centerTitle: true,
         backgroundColor: AppColors.wbgColor,
       ),
@@ -57,6 +57,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
                     number: number,
                     icon: Icons.event_available,
                     color: Colors.teal,
+                    onTap: (){},
                   );
                 }).toList(),
               ),

@@ -33,11 +33,12 @@ class _HospitalDetailsState extends State<HospitalDetails> {
 
               const StyledTitle(title: "যোগাযোগ নম্বর",),
               const SizedBox(height: 10,),
-              const ContactInfo(
+              ContactInfo(
                 title: 'অ্যাম্বুলেন্স',
                 number: '01756-617390',
                 icon: Icons.emergency,
                 color: Colors.redAccent,
+                onTap: (){},
               ),
               const SizedBox(height: 20,),
 

@@ -5,7 +5,7 @@ import '../../../common/presentation/widgets/contact_info.dart';
 import '../../../common/presentation/widgets/description_card.dart';
 import '../../../common/presentation/widgets/service_ds_banner.dart';
 import '../../../common/presentation/widgets/styled_title.dart';
-import '../../data/doctors_info_data_class.dart';
+import '../../data/doctors_info_data_model.dart';
 import '../widgets/doctors_info.dart';
 
 class DiagnosticCentersDetails extends StatefulWidget {
@@ -52,6 +52,7 @@ class _DiagnosticCentersDetailsState extends State<DiagnosticCentersDetails> {
                     number: number,
                     icon: Icons.event_available,
                     color: Colors.teal,
+                    onTap: (){},
                   );
                 }).toList()
               ),

@@ -1,56 +1,66 @@
 import 'package:flutter/material.dart';
 import 'package:smart_hili/features/services/common/presentation/widgets/contact_info.dart';
-import 'package:smart_hili/features/services/common/presentation/widgets/description_card.dart';
+import 'package:smart_hili/features/services/common/presentation/widgets/providing_s_grid.dart';
 import 'package:smart_hili/features/services/common/presentation/widgets/school_location.dart';
 import 'package:smart_hili/features/services/common/presentation/widgets/service_ds_banner.dart';
 import 'package:smart_hili/features/services/common/presentation/widgets/styled_title.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import '../../../../../application/app_content.dart';
-
-class PoliceDetails extends StatefulWidget {
+class WifiDetails extends StatefulWidget {
+  final String address;
   final String locationUrl;
+  final String providerName;
+  final List<String> contactNumbers;
+  final List<ServiceType> items;
 
-   const PoliceDetails({
-    super.key, 
+  const WifiDetails({
+    super.key,
     required this.locationUrl,
-    });
+    required this.address,
+    required this.providerName,
+    required this.contactNumbers,
+    required this.items,
+  });
 
   @override
-  State<PoliceDetails> createState() => _PoliceDetailsState();
+  State<WifiDetails> createState() => _WifiDetailsState();
 }
 
-class _PoliceDetailsState extends State<PoliceDetails> {
+class _WifiDetailsState extends State<WifiDetails> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("সেবা বিস্তারিত"), centerTitle: true),
+      appBar: AppBar(title: const Text("ওয়াইফাই বিস্তারিত"), centerTitle: true),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20.0),
         child: SingleChildScrollView(
           child: Column(
             children: [
-              const ServiceDSBanner(title: 'হাকিমপুর (হিলি) থানা'),
+              ServiceDSBanner(title: widget.providerName),
               const SizedBox(height: 20),
 
               const StyledTitle(title: "যোগাযোগ নম্বর"),
               const SizedBox(height: 10),
-              ContactInfo(
-                title: 'যোগাযোগ',
-                number: '01320136703',
-                icon: Icons.security,
-                color: Colors.blueAccent,
-                onTap: (){},
+              Column(
+                  children: widget.contactNumbers.map((number){
+                    return ContactInfo(
+                      title: 'যোগাযোগের জন্য',
+                      number: number,
+                      icon: Icons.event_available,
+                      color: Colors.teal,
+                      onTap: (){},
+                    );
+                  }).toList()
               ),
-
               const SizedBox(height: 20),
-              const StyledTitle(title: "বর্ণনা"),
+
+              const StyledTitle(title: "সেবা সম্পর্কিত তথ্য"),
               const SizedBox(height: 10),
-              DescriptionCard(description: AppContent.policeSDescription),
-
+              ProvidingServiceGrid( items: widget.items,),
               const SizedBox(height: 20),
+
               SchoolLocationWidget(
-                address: "থানা রোড, বাংলাহিলি-৫২৭০",
+                address: widget.address,
                 onOpenMap: () => _launchGMUrl(Uri.parse(widget.locationUrl)),
               ),
               const SizedBox(height: 20),

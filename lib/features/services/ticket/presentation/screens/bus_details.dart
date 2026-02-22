@@ -57,6 +57,7 @@ class _BusDetailsState extends State<BusDetails> {
                       number: number,
                       icon: Icons.event_available,
                       color: Colors.teal,
+                      onTap: (){},
                     );
                   }).toList(),
                 ),

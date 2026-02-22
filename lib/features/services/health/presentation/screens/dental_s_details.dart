@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:smart_hili/features/services/health/presentation/widgets/doc_profile_header.dart';
 import 'package:smart_hili/features/services/health/presentation/widgets/facility_gallery.dart';
-import 'package:smart_hili/features/services/health/presentation/widgets/treatment_grid.dart';
+import 'package:smart_hili/features/services/common/presentation/widgets/providing_s_grid.dart';
 
 import '../../../../../application/app_colors.dart';
 import '../../../common/presentation/widgets/contact_info.dart';
@@ -18,6 +18,7 @@ class DentalSDetails extends StatefulWidget {
   final String rating;
   final String patient;
   final String imageUrl;
+  final List<ServiceType> items;
 
   const DentalSDetails({
     super.key,
@@ -30,6 +31,7 @@ class DentalSDetails extends StatefulWidget {
     required this.rating,
     required this.imageUrl,
     required this.patient,
+    required this.items,
   });
 
   @override
@@ -61,6 +63,7 @@ class _DentalSDetailsState extends State<DentalSDetails> {
                 imageUrl: widget.imageUrl,
               ),
               const SizedBox(height: 8,),
+
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
                 decoration: BoxDecoration(
@@ -84,6 +87,7 @@ class _DentalSDetailsState extends State<DentalSDetails> {
                 ),
               ),
               const SizedBox(height: 20,),
+             
               const StyledTitle(title: "যোগাযোগ নম্বর",),
               const SizedBox(height: 10,),
               Column(
@@ -93,13 +97,16 @@ class _DentalSDetailsState extends State<DentalSDetails> {
                       number: number,
                       icon: Icons.event_available,
                       color: Colors.teal,
+                      onTap: (){},
                     );
                   }).toList()
               ),
               const SizedBox(height: 20,),
+
               const StyledTitle(title: "ট্রিটমেন্টস",),
               const SizedBox(height: 10,),
-              const TreatmentGrid(),
+              ProvidingServiceGrid(items: widget.items),
+
               const SizedBox(height: 20,),
               const StyledTitle(title: "ফ্যাসিলিটি ছবিসমূহ"),
               const SizedBox(height: 10,),

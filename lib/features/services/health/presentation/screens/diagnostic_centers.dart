@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../../../application/app_colors.dart';
-import '../../data/doctors_info_data_class.dart';
+import '../../data/doctors_info_data_model.dart';
 import '../widgets/hospital_card.dart';
 import 'diagnostic_centers_details.dart';
 

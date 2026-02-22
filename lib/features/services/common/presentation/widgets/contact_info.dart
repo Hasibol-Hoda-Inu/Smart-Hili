@@ -5,6 +5,7 @@ class ContactInfo extends StatelessWidget {
   final String number;
   final IconData icon;
   final Color color;
+  final VoidCallback onTap;
 
   const ContactInfo({
     super.key,
@@ -12,6 +13,7 @@ class ContactInfo extends StatelessWidget {
     required this.number,
     required this.icon,
     required this.color,
+    required this.onTap,
   });
 
   @override
@@ -48,7 +50,7 @@ class ContactInfo extends StatelessWidget {
           ),
           child: IconButton(
             icon: const Icon(Icons.call, color: Colors.white),
-            onPressed: () {},
+            onPressed: onTap,
           ),
         ),
       ),
