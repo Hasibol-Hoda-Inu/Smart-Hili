@@ -1,7 +1,9 @@
-# smart_hili
+# Smart Hili
 
-A new Flutter project.
+## A upozila app
 
-## Getting Started
+- DataBase: SupaBase
+- State Manager: Provider
 
 
+![app overveiw](assets/images/insta_post.png)

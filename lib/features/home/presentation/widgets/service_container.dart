@@ -7,27 +7,29 @@ class ServiceContainer extends StatelessWidget {
     required this.icon,
     required this.color,
     this.onTap,
+    required this.screenWidth,
+    required this.screenHeight,
   });
 
   final String title;
   final IconData icon;
   final Color color;
   final VoidCallback? onTap;
+  final double screenWidth;
+  final double screenHeight;
+
 
   @override
   Widget build(BuildContext context) {
-    final screenWidth = MediaQuery.sizeOf(context).width;
-    final screenHeight = MediaQuery.sizeOf(context).height;
-
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        padding: const EdgeInsets.all(20),
-        width: screenWidth/2.3,
-        height: screenHeight/4.8,
+        padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 6),
+        // width: screenWidth * 0.43,
+        // height: screenHeight * 0.25,
         decoration: BoxDecoration(
             color: Colors.white,
-            borderRadius: BorderRadius.circular(20),
+            borderRadius: BorderRadius.circular(10),
           border: Border.all(color: Colors.grey.shade200),
         ),
         child: Column(
@@ -36,18 +38,22 @@ class ServiceContainer extends StatelessWidget {
           spacing: 16,
           children: [
             Container(
-                padding: const EdgeInsets.all(16),
-                decoration: BoxDecoration(
-                    color: color.withAlpha(30),
-                    // border: Border.all(color: color.withAlpha(177)),
-                    shape: BoxShape.circle
-                ),
-                child: Icon(icon, size: 34, color: color,),
-            ),
+                  padding: const EdgeInsets.all(8),
+                  decoration: BoxDecoration(
+                      color: color.withAlpha(30),
+                      // border: Border.all(color: color.withAlpha(177)),
+                      shape: BoxShape.circle
+                  ),
+                  child: Icon(
+                    icon,
+                    size: 24,
+                    color: color,
+                  ),
+              ),
             Text(title,
               textAlign: TextAlign.center,
-              style: const TextStyle(
-                fontSize: 20,
+              style: TextStyle(
+                fontSize: screenWidth * 0.04,
                 fontWeight: FontWeight.bold
             ),),
           ],

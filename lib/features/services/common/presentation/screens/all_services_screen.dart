@@ -25,6 +25,9 @@ class AllServicesScreen extends StatefulWidget {
 class _AllServicesScreenState extends State<AllServicesScreen> {
   @override
   Widget build(BuildContext context) {
+    final screenHeight = MediaQuery.of(context).size.height;
+    final screenWidth = MediaQuery.of(context).size.width;
+
     return Scaffold(
       appBar: AppBar(
         title: const Text(
@@ -52,18 +55,24 @@ class _AllServicesScreenState extends State<AllServicesScreen> {
                     icon: Icons.local_hospital,
                     color: Colors.redAccent,
                     onTap: _onTapH,
+                    screenWidth: screenWidth,
+                    screenHeight: screenHeight,
                   ),
                   ServiceContainer(
                     title: "ডায়াগনস্টিক সেন্টার",
                     icon: Icons.biotech_rounded,
                     color: Colors.blueGrey,
                     onTap: _onTapD,
+                    screenWidth: screenWidth,
+                    screenHeight: screenHeight,
                   ),
                   ServiceContainer(
                     title: "ডেন্টাল",
                     icon: Icons.medical_services_rounded,
                     color: Colors.teal,
                     onTap: _onTapDS,
+                    screenWidth: screenWidth,
+                    screenHeight: screenHeight,
                   ),
                 ],
               ),
@@ -81,17 +90,23 @@ class _AllServicesScreenState extends State<AllServicesScreen> {
                     icon: Icons.school,
                     color: Colors.blue,
                     onTap: _onTapSchls,
+                    screenWidth: screenWidth,
+                    screenHeight: screenHeight,
                   ),
                   ServiceContainer(
                     title: "কলেজ",
                     icon: Icons.account_balance,
                     color: Colors.indigo,
                     onTap: _onTapClgs,
+                    screenWidth: screenWidth,
+                    screenHeight: screenHeight,
                   ),
-                  const ServiceContainer(
+                  ServiceContainer(
                     title: "টিউশনি",
                     icon: Icons.menu_book,
                     color: Colors.teal,
+                    screenWidth: screenWidth,
+                    screenHeight: screenHeight,
                   ),
                 ],
               ),
@@ -109,12 +124,16 @@ class _AllServicesScreenState extends State<AllServicesScreen> {
                     icon: Icons.electric_bolt_rounded,
                     color: Colors.lightBlueAccent,
                     onTap: _onTapElectricity,
+                   screenWidth: screenWidth,
+                   screenHeight: screenHeight,
                   ),
                   ServiceContainer(
                     title: "ওয়াইফাই",
                     icon: Icons.wifi,
                     color: Colors.indigo,
                     onTap: _onTapWifi,
+                    screenWidth: screenWidth,
+                    screenHeight: screenHeight,
                   ),
                 ],
               ),
@@ -132,12 +151,16 @@ class _AllServicesScreenState extends State<AllServicesScreen> {
                     icon: Icons.car_crash_rounded,
                     color: Colors.blueAccent,
                     onTap: _onTapBus,
+                    screenWidth: screenWidth,
+                    screenHeight: screenHeight,
                   ),
                   ServiceContainer(
                     title: "ট্রেন",
                     icon: Icons.train_rounded,
                     color: Colors.green,
                     onTap: _onTapTrain,
+                    screenWidth: screenWidth,
+                    screenHeight: screenHeight,
                   ),
                 ],
               ),
@@ -155,12 +178,16 @@ class _AllServicesScreenState extends State<AllServicesScreen> {
                     icon: Icons.shield_moon_rounded,
                     color: Colors.teal,
                     onTap: _onTapP,
+                    screenWidth: screenWidth,
+                    screenHeight: screenHeight,
                   ),
                   ServiceContainer(
                     title: "ফায়ার সার্ভিস",
                     icon: Icons.local_fire_department_rounded,
                     color: Colors.redAccent,
                     onTap: _onTapfire,
+                    screenWidth: screenWidth,
+                    screenHeight: screenHeight,
                   ),
                 ],
               ),

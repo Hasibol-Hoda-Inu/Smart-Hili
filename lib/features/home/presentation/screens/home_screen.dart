@@ -22,6 +22,9 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final screenHeight = MediaQuery.of(context).size.height;
+    final screenWidth = MediaQuery.of(context).size.width;
+
     return Scaffold(
       backgroundColor: AppColors.wbgColor,
       appBar: AppBar(
@@ -48,8 +51,9 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            Wrap(
+              // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+
               children: [
                 Container(
                   padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
@@ -92,9 +96,10 @@ class _HomeScreenState extends State<HomeScreen> {
               shrinkWrap: true,
                 physics: const NeverScrollableScrollPhysics(),
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 2,
-                  crossAxisSpacing: 20,
-                  mainAxisSpacing: 20,
+                  crossAxisCount: 3,
+                  crossAxisSpacing: 10,
+                  mainAxisSpacing: 10,
+                  childAspectRatio: 0.8,
                 ),
                 itemCount: ServiceCategoryData.serviceItems.length,
                 itemBuilder: (context, index) {
@@ -104,6 +109,8 @@ class _HomeScreenState extends State<HomeScreen> {
                     icon: item.icon,
                     color: item.color,
                     onTap: ()=> _onNavigate(item.destination),
+                    screenWidth: screenWidth,
+                    screenHeight: screenHeight,
                   );
                 }
             ),

@@ -38,21 +38,23 @@ class _TrainDetailsState extends State<TrainDetails> {
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20.0), 
-        child: Column(
-          children: [
-            const CarouselSliderWidget(),
-            const SizedBox(height: 20),
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              const CarouselSliderWidget(),
+              const SizedBox(height: 20),
 
-            const StyledTitle(title: "ট্রেন থামার সময়সূচি"),
-            const SizedBox(height: 10),
-            const TrainStoppingTimeWidget(),
-            const SizedBox(height: 20),
+              const StyledTitle(title: "ট্রেন থামার সময়সূচি"),
+              const SizedBox(height: 10),
+              const TrainStoppingTimeWidget(),
+              const SizedBox(height: 20),
 
-            SchoolLocationWidget(
-              address: "অবস্থান ও মানচিত্র", 
-              onOpenMap: ()=> _launchGMUrl(Uri.parse(widget.locationUrl)),
-            ),
-          ],
+              SchoolLocationWidget(
+                address: "অবস্থান ও মানচিত্র",
+                onOpenMap: ()=> _launchGMUrl(Uri.parse(widget.locationUrl)),
+              ),
+            ],
+          ),
         )
         ),
     );
