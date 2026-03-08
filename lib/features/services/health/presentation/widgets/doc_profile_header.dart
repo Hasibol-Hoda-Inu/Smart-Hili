@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class DoctorProfileHeader extends StatelessWidget {
   final String name;
@@ -34,10 +35,9 @@ class DoctorProfileHeader extends StatelessWidget {
           Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // Doctor Image with Border
               Container(
-                width: 100,
-                height: 120,
+                width: 100.w,
+                height: 120.h,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
                   image: DecorationImage(
@@ -47,34 +47,33 @@ class DoctorProfileHeader extends StatelessWidget {
                   border: Border.all(color: Colors.teal.shade50, width: 4),
                 ),
               ),
-              const SizedBox(width: 20),
-              // Doctor Details
+              SizedBox(width: 20.w),
               Expanded(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
                       name,
-                      style: const TextStyle(
-                        fontSize: 22,
+                      style: TextStyle(
+                        fontSize: 22.sp,
                         fontWeight: FontWeight.bold,
-                        color: Color(0xFF2D3232),
+                        color: const Color(0xFF2D3232),
                       ),
                     ),
-                    const SizedBox(height: 4),
+                    SizedBox(height: 4.h),
                     Text(
                       specialty,
                       style: TextStyle(
-                        fontSize: 16,
+                        fontSize: 16.sp,
                         fontWeight: FontWeight.w500,
                         color: Colors.teal.shade700,
                       ),
                     ),
-                    const SizedBox(height: 8),
+                    SizedBox(height: 8.h),
                     Text(
                       degree,
                       style: TextStyle(
-                        fontSize: 14,
+                        fontSize: 14.sp,
                         color: Colors.grey.shade600,
                         height: 1.4,
                       ),
@@ -84,7 +83,7 @@ class DoctorProfileHeader extends StatelessWidget {
               ),
             ],
           ),
-          const SizedBox(height: 25),
+          SizedBox(height: 25.h),
           // Stats Row
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -103,8 +102,8 @@ class DoctorProfileHeader extends StatelessWidget {
 
   Widget _buildVerticalDivider() {
     return Container(
-      height: 30,
-      width: 1,
+      height: 30.h,
+      width: 1.w,
       color: Colors.grey.shade300,
     );
   }
@@ -114,15 +113,15 @@ class DoctorProfileHeader extends StatelessWidget {
       children: [
         Text(
           label,
-          style: TextStyle(fontSize: 13, color: Colors.grey.shade500),
+          style: TextStyle(fontSize: 13.sp, color: Colors.grey.shade500),
         ),
-        const SizedBox(height: 4),
+        SizedBox(height: 4.h),
         Text(
           value,
-          style: const TextStyle(
-            fontSize: 16,
+          style: TextStyle(
+            fontSize: 16.sp,
             fontWeight: FontWeight.bold,
-            color: Color(0xFF2D3232),
+            color: const Color(0xFF2D3232),
           ),
         ),
       ],

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class DoctorInfoCard extends StatelessWidget {
   final String name;
@@ -16,7 +17,7 @@ class DoctorInfoCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.all(16),
-      margin: const EdgeInsets.symmetric(vertical: 8, horizontal: 2),
+      margin: EdgeInsets.symmetric(vertical: 8.h, horizontal: 2.w),
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(20),
@@ -27,24 +28,24 @@ class DoctorInfoCard extends StatelessWidget {
         children: [
           Row(
             children: [
-              const CircleAvatar(
-                radius: 28,
+              CircleAvatar(
+                radius: 28.sp,
                 backgroundColor: Colors.blueAccent,
-                child: Icon(Icons.person, color: Colors.white, size: 30),
+                child: Icon(Icons.person, color: Colors.white, size: 30.sp),
               ),
-              const SizedBox(width: 12),
+              SizedBox(width: 12.w),
               Expanded(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
                       name,
-                      style: const TextStyle(
-                        fontSize: 18,
+                      style: TextStyle(
+                        fontSize: 18.sp,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    const SizedBox(height: 4),
+                    SizedBox(height: 4.h),
                     Text(
                       specialization,
                       style: TextStyle(
@@ -57,19 +58,19 @@ class DoctorInfoCard extends StatelessWidget {
               ),
             ],
           ),
-          const Divider(height: 24),
+          Divider(height: 24.h),
           Row(
             children: [
-              const Icon(Icons.access_time_rounded, color: Colors.teal, size: 18),
-              const SizedBox(width: 8),
-              const Text(
+              Icon(Icons.access_time_rounded, color: Colors.teal, size: 18.sp),
+              SizedBox(width: 8.w),
+              Text(
                 'রোগী দেখার সময়:',
-                style: TextStyle(fontWeight: FontWeight.w600, fontSize: 13),
+                style: TextStyle(fontWeight: FontWeight.w600, fontSize: 13.w),
               ),
-              const SizedBox(width: 6),
+              SizedBox(width: 6.w),
               Text(
                 visitingTime,
-                style: const TextStyle(fontSize: 13),
+                style: TextStyle(fontSize: 13.sp),
               ),
             ],
           ),

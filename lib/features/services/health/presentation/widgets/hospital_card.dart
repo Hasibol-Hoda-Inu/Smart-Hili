@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:smart_hili/features/services/common/presentation/widgets/status_badge.dart';
 
 import '../../../../../application/assets_path.dart';
@@ -32,8 +33,8 @@ class HospitalCard extends StatelessWidget {
               spacing: 12,
               children: [
                 Container(
-                  width: 120,
-                  height: 120,
+                  width: 120.w,
+                  height: 120.h,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(12),
                       image: const DecorationImage(
@@ -47,20 +48,20 @@ class HospitalCard extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(title,
-                        style: const TextStyle(
-                            fontSize: 20,
+                        style: TextStyle(
+                            fontSize: 20.sp,
                             fontWeight: FontWeight.bold,
                         ),),
-                      const Text("হাকিমপুর দিনাজপুর",
-                        style: TextStyle(fontSize: 16),
+                      Text("হাকিমপুর দিনাজপুর",
+                        style: TextStyle(fontSize: 16.sp),
                       ),
-                      const SizedBox(height: 10,),
-                      const Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
+                      SizedBox(height: 10.h,),
+                      Wrap(
+                        alignment: WrapAlignment.start,
                         spacing: 10,
                         children: [
-                          StatusBadge(),
-                          Text("24/7 Service"),
+                          const StatusBadge(),
+                          Text("24/7 Service", style: TextStyle(fontSize: 14.sp),),
                         ],
                       )
                     ],

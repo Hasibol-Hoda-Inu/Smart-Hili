@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:intl/intl.dart';
 import 'package:smart_hili/features/home/data/service_category_data_model.dart';
 import 'package:smart_hili/features/home/presentation/widgets/carousel_slider.dart';
@@ -47,25 +48,23 @@ class _HomeScreenState extends State<HomeScreen> {
         backgroundColor: AppColors.wbgColor,
       ),
       body: SingleChildScrollView(
-        padding: const EdgeInsets.symmetric(horizontal: 20),
+        padding: EdgeInsets.symmetric(horizontal: 20.w),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Wrap(
-              // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-
               children: [
                 Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                  padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 8.h),
                   decoration: BoxDecoration(
                     color: const Color(0xFFE0F2F1), // Light teal background
                     borderRadius: BorderRadius.circular(30),
                   ),
-                  child: const Row(
+                  child: Row(
                     children: [
-                      Icon(Icons.location_on, size: 18, color: Color(0xFF00695C)),
-                      SizedBox(width: 4),
-                      Text(
+                      Icon(Icons.location_on, size: 18.sp, color: const Color(0xFF00695C)),
+                      SizedBox(width: 4.w),
+                      const Text(
                         "বাংলা হিলি, হাকিমপুর, দিনাজপুর",
                         style: TextStyle(
                           color: Color(0xFF00695C), // Dark teal text
@@ -77,29 +76,29 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
                 Text(
                   "আজ, ${_getBanglaDate()}",
-                  style: const TextStyle(
+                  style: TextStyle(
                     color: Colors.blueGrey,
-                    fontSize: 14,
+                    fontSize: 14.sp,
                   ),
                 ),
               ],
             ),
-            const SizedBox(height: 20,),
+            SizedBox(height: 20.h,),
             const CarouselSliderWidget(),
-            const SizedBox(height: 20,),
-            const Text("জনপ্রিয় সেবা সমূহ", style: TextStyle(
-              fontSize: 24,
+            SizedBox(height: 20.h,),
+            Text("জনপ্রিয় সেবা সমূহ", style: TextStyle(
+              fontSize: 24.sp,
               fontWeight: FontWeight.bold,
             ),),
-            const SizedBox(height: 10,),
+            SizedBox(height: 10.h,),
             GridView.builder(
               shrinkWrap: true,
                 physics: const NeverScrollableScrollPhysics(),
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 3,
-                  crossAxisSpacing: 10,
-                  mainAxisSpacing: 10,
-                  childAspectRatio: 0.8,
+                  crossAxisSpacing: 10.w,
+                  mainAxisSpacing: 10.h,
+                  childAspectRatio: 0.9.h,
                 ),
                 itemCount: ServiceCategoryData.serviceItems.length,
                 itemBuilder: (context, index) {
@@ -114,7 +113,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   );
                 }
             ),
-            const SizedBox(height: 10,),
+            SizedBox(height: 10.h,),
           ],
         ),
       ),

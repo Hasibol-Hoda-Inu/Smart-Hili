@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../../application/app_colors.dart';
 import '../../../common/presentation/widgets/contact_info.dart';
@@ -36,15 +37,15 @@ class _DiagnosticCentersDetailsState extends State<DiagnosticCentersDetails> {
         centerTitle: true,
       ),
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20.0),
+        padding: EdgeInsets.symmetric(horizontal: 20.0.w),
         child: SingleChildScrollView(
           child: Column(
             children: [
               ServiceDSBanner(title: widget.title,),
-              const SizedBox(height: 20,),
+              SizedBox(height: 20.h,),
 
               const StyledTitle(title: "যোগাযোগ নম্বর",),
-              const SizedBox(height: 10,),
+              SizedBox(height: 10.h,),
               Column(
                 children: widget.contactNmbrs.map((number){
                   return ContactInfo(
@@ -56,19 +57,17 @@ class _DiagnosticCentersDetailsState extends State<DiagnosticCentersDetails> {
                   );
                 }).toList()
               ),
-              const SizedBox(height: 12,),
-
-              const SizedBox(height: 20,),
+              SizedBox(height: 20.h,),
 
               const StyledTitle(title: "Doctors"),
-              const SizedBox(height: 10,),
+              SizedBox(height: 10.h,),
               _buildDoctorList(),
-              const SizedBox(height: 20,),
+              SizedBox(height: 20.h,),
 
               const StyledTitle(title: "বর্ণনা"),
-              const SizedBox(height: 10,),
+              SizedBox(height: 10.h,),
               DescriptionCard(description: widget.description,),
-              const SizedBox(height: 20,),
+              SizedBox(height: 20.h,),
             ],
           ),
         ),
@@ -77,7 +76,6 @@ class _DiagnosticCentersDetailsState extends State<DiagnosticCentersDetails> {
   }
 
   Widget _buildDoctorList() {
-
     return ListView.builder(
       shrinkWrap: true,
       physics: const BouncingScrollPhysics(),

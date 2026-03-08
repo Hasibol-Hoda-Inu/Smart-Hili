@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:smart_hili/features/services/common/presentation/const/location_urls.dart';
 import 'package:smart_hili/features/services/common/presentation/widgets/providing_s_grid.dart';
 import 'package:smart_hili/features/services/education/presentation/screens/all_schools.dart';
@@ -41,14 +42,14 @@ class _AllServicesScreenState extends State<AllServicesScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Text(
+              Text(
                 "১. স্বাস্থ:",
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22.sp),
               ),
-              const SizedBox(height: 12),
+              SizedBox(height: 12.h),
               Wrap(
-                spacing: 16,
-                runSpacing: 16,
+                spacing: 16.w,
+                runSpacing: 16.h,
                 children: [
                   ServiceContainer(
                     title: "হাসপাতাল",
@@ -77,13 +78,13 @@ class _AllServicesScreenState extends State<AllServicesScreen> {
                 ],
               ),
               const SizedBox(height: 24),
-              const Text(
+              Text(
                 "২. শিক্ষা",
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22.sp),
               ),
               Wrap(
-                spacing: 16,
-                runSpacing: 16,
+                spacing: 16.w,
+                runSpacing: 16.h,
                 children: [
                   ServiceContainer(
                     title: "স্কুল",
@@ -110,14 +111,14 @@ class _AllServicesScreenState extends State<AllServicesScreen> {
                   ),
                 ],
               ),
-              const SizedBox(height: 24),
-              const Text(
+              SizedBox(height: 24.h),
+              Text(
                 "৩. ইলেকট্রিসিটি ও ওয়াইফাই",
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22.sp),
               ),
               Wrap(
-                spacing: 16,
-                runSpacing: 16,
+                spacing: 16.w,
+                runSpacing: 16.h,
                 children: [
                  ServiceContainer(
                     title: "ইলেকট্রিসিটি",
@@ -137,14 +138,14 @@ class _AllServicesScreenState extends State<AllServicesScreen> {
                   ),
                 ],
               ),
-              const SizedBox(height: 24),
-              const Text(
+              SizedBox(height: 24.h),
+              Text(
                 "৪. টিকিট",
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22.sp),
               ),
               Wrap(
-                spacing: 16,
-                runSpacing: 16,
+                spacing: 16.h,
+                runSpacing: 16.w,
                 children: [
                   ServiceContainer(
                     title: "বাস",
@@ -164,14 +165,14 @@ class _AllServicesScreenState extends State<AllServicesScreen> {
                   ),
                 ],
               ),
-              const SizedBox(height: 24),
-              const Text(
+              SizedBox(height: 24.h),
+              Text(
                 "৫. নিরাপত্তা",
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22.sp),
               ),
               Wrap(
-                spacing: 16,
-                runSpacing: 16,
+                spacing: 16.w,
+                runSpacing: 16.h,
                 children: [
                   ServiceContainer(
                     title: "পুলিশ",
@@ -191,7 +192,7 @@ class _AllServicesScreenState extends State<AllServicesScreen> {
                   ),
                 ],
               ),
-              const SizedBox(height: 20),
+              SizedBox(height: 20.h),
             ],
           ),
         ),

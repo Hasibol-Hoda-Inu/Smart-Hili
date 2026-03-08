@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ServiceType {
   final String title;
@@ -18,11 +19,11 @@ class ProvidingServiceGrid extends StatelessWidget {
     return GridView.builder(
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
-      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 3,
-        crossAxisSpacing: 15,
-        mainAxisSpacing: 15,
-        childAspectRatio: 0.9,
+        crossAxisSpacing: 15.w,
+        mainAxisSpacing: 15.h,
+        childAspectRatio: 0.9.h,
       ),
       itemCount: items.length,
       itemBuilder: (context, index) {
@@ -43,15 +44,15 @@ class ProvidingServiceGrid extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Icon(item.icon, color: item.color, size: 30),
-          const SizedBox(height: 10),
+          Icon(item.icon, color: item.color, size: 30.sp),
+          SizedBox(height: 10.h),
           Text(
             item.title,
             textAlign: TextAlign.center,
-            style: const TextStyle(
-              fontSize: 16,
+            style: TextStyle(
+              fontSize: 16.sp,
               fontWeight: FontWeight.w600,
-              color: Color(0xFF2D3232),
+              color: const Color(0xFF2D3232),
             ),
           ),
         ],

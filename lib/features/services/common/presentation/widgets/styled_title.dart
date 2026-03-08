@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class StyledTitle extends StatelessWidget {
   const StyledTitle({
@@ -13,18 +14,18 @@ class StyledTitle extends StatelessWidget {
     return Row(
       children: [
         Container(
-          width: 4,
-          height: 24,
+          width: 4.w,
+          height: 24.h,
           decoration: BoxDecoration(
             color: Colors.teal,
             borderRadius: BorderRadius.circular(2),
           ),
         ),
-        const SizedBox(width: 8),
+        SizedBox(width: 8.w),
         Text(
           title,
-          style: const TextStyle(
-            fontSize: 20,
+          style: TextStyle(
+            fontSize: 20.sp,
             fontWeight: FontWeight.bold,
           ),
         ),

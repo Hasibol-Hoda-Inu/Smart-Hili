@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:smart_hili/features/services/common/presentation/widgets/status_badge.dart';
 
 import '../../../../../application/app_colors.dart';
@@ -15,7 +16,7 @@ class ServiceDSBanner extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.maxFinite,
-      height: 200,
+      height: 200.h,
       padding: const EdgeInsets.all(16),
       decoration: const BoxDecoration(
           borderRadius: BorderRadius.all(Radius.circular(20),
@@ -27,11 +28,12 @@ class ServiceDSBanner extends StatelessWidget {
       ),
       child: Align(
         alignment: Alignment.bottomLeft,
-        child: Row(
+        child: Wrap(
+          runSpacing: 10,
           spacing: 10,
           children: [
             Container(
-              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
+              padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 2.h),
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(20),

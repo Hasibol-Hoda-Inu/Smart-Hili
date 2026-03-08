@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class SosContainer extends StatelessWidget {
   const SosContainer({
@@ -22,8 +23,7 @@ class SosContainer extends StatelessWidget {
       onTap: onTap,
       child: Container(
         width: double.maxFinite,
-
-        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
+        padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 30.h),
         decoration: BoxDecoration(
           color: color,
           borderRadius: BorderRadius.circular(40),
@@ -54,9 +54,9 @@ class SosContainer extends StatelessWidget {
               children: [
                 Text(
                   title,
-                  style: const TextStyle(
+                  style: TextStyle(
                     color: Colors.white,
-                    fontSize: 40,
+                    fontSize: 40.sp,
                     fontWeight: FontWeight.bold,
                   ),
                 ),

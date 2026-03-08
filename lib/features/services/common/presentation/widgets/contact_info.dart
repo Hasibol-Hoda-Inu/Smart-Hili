@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ContactInfo extends StatelessWidget {
   final String title;
@@ -19,7 +20,6 @@ class ContactInfo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(vertical: 8),
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(40),
@@ -29,7 +29,7 @@ class ContactInfo extends StatelessWidget {
         leading: CircleAvatar(
           backgroundColor: color.withAlpha(56),
           radius: 24,
-          child: Icon(icon, color: color, size: 34,),
+          child: Icon(icon, color: color, size: 34.sp,),
         ),
         title: Text(
           title,

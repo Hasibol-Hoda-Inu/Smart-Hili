@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:smart_hili/features/services/health/presentation/widgets/doc_profile_header.dart';
 import 'package:smart_hili/features/services/health/presentation/widgets/facility_gallery.dart';
 import 'package:smart_hili/features/services/common/presentation/widgets/providing_s_grid.dart';
@@ -49,7 +50,7 @@ class _DentalSDetailsState extends State<DentalSDetails> {
         backgroundColor: AppColors.wbgColor,
       ),
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20.0),
+        padding: EdgeInsets.symmetric(horizontal: 20.0.w),
         child: SingleChildScrollView(
           child: Column(
             children: [
@@ -62,10 +63,10 @@ class _DentalSDetailsState extends State<DentalSDetails> {
                 patients: widget.patient,
                 imageUrl: widget.imageUrl,
               ),
-              const SizedBox(height: 8,),
+              SizedBox(height: 8.h,),
 
               Container(
-                padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 8.h),
                 decoration: BoxDecoration(
                   color: Colors.green.shade50,
                   borderRadius: BorderRadius.circular(10),
@@ -74,11 +75,11 @@ class _DentalSDetailsState extends State<DentalSDetails> {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     Icon(Icons.access_time_filled, size: 18, color: Colors.green.shade700),
-                    const SizedBox(width: 8),
+                    SizedBox(width: 8.w),
                     Text(
                       "শনি - বৃহস্পতি: বিকাল ৪:০০ - রাত ৯:০০",
                       style: TextStyle(
-                        fontSize: 14,
+                        fontSize: 14.sp,
                         fontWeight: FontWeight.bold,
                         color: Colors.green.shade900,
                       ),
@@ -86,10 +87,10 @@ class _DentalSDetailsState extends State<DentalSDetails> {
                   ],
                 ),
               ),
-              const SizedBox(height: 20,),
+              SizedBox(height: 20.h,),
              
               const StyledTitle(title: "যোগাযোগ নম্বর",),
-              const SizedBox(height: 10,),
+              SizedBox(height: 10.h,),
               Column(
                   children: widget.contactNmbrs.map((number){
                     return ContactInfo(
@@ -101,22 +102,22 @@ class _DentalSDetailsState extends State<DentalSDetails> {
                     );
                   }).toList()
               ),
-              const SizedBox(height: 20,),
+              SizedBox(height: 20.h,),
 
               const StyledTitle(title: "ট্রিটমেন্টস",),
-              const SizedBox(height: 10,),
+              SizedBox(height: 10.h,),
               ProvidingServiceGrid(items: widget.items),
 
-              const SizedBox(height: 20,),
+              SizedBox(height: 20.h,),
               const StyledTitle(title: "ফ্যাসিলিটি ছবিসমূহ"),
-              const SizedBox(height: 10,),
+              SizedBox(height: 10.h,),
               const FacilityGallery(images: [
                 "https://eclipse-dental.com/wp-content/uploads/2024/12/Dental-equipment-essentials-for-your-modern-practice.jpg",
                 "https://verainterior.com/wp-content/uploads/2024/05/Dental-Clinic-Interior-Design-jpg.webp",
                 "https://ameldental.com/wp-content/uploads/2020/06/02-min-scaled-e1592552627573.jpg",
                 "https://images.stockcake.com/public/c/6/e/c6e4f250-b538-4ab8-95ff-c02038e1e6c1_large/dental-office-interior-stockcake.jpg",
               ]),
-              const SizedBox(height: 20,),
+              SizedBox(height: 20.h,),
             ],
           ),
         ),
